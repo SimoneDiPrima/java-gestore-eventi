@@ -40,8 +40,7 @@ public class Evento {
 		this.postiTotali = postiTotali;
 	}
 	public int getPostiTotali() {
-		int disponible = this.postiTotali;
-		return disponible;
+		return this.postiTotali = postiTotali;
 		
 	}
 
@@ -56,7 +55,7 @@ public class Evento {
 			throw new Exception("siamo spiacenti non ci sono abbastanza posti disponibili per l evento!");
 		}
 	}
-		public void disdici(int postiPrenotati , int postiTotali)throws Exception{
+		public void disdici(int postiPrenotati )throws Exception{
 			this.postiPrenotati = postiPrenotati;
 			if(postiPrenotati <=0 || postiPrenotati> postiTotali ) {
 				throw new Exception("siamo spiacenti non ci sono posti prenotati per l evento");

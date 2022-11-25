@@ -16,8 +16,7 @@ try {
 			
 			
 			
-			Evento c = new Evento("Welcome to the jungle",200);
-			int postiTotali = 0;
+			Evento c = new Evento("Welcome to the jungle",1000);
 			System.out.print(c);
 			System.out.print("\nVuoi prenotare un biglietto?? y/n");
 			String answer = sc.nextLine();
@@ -32,8 +31,8 @@ try {
 				if(negative.equals("y")){
 					System.out.print("\nquanti biglietti vuoi disdire??");
 					int cancelled = cancel.nextInt();
-					c.disdici(cancelled,booking);
-					System.out.print("i posti disponibili per l evento quindi saranno:" + (200 - postiTotali -  cancelled));
+					c.disdici(cancelled);
+					System.out.print("i posti disponibili per l evento quindi saranno:" + (c.getPostiTotali() -  cancelled));
 					ProgrammEventi Sanremo = new ProgrammEventi("Sanremo");
 					Evento a = new Evento("Il leone dorme",200);
 					Evento b = new Evento("Welcome to the jungle",200);
