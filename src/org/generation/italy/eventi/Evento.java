@@ -30,6 +30,7 @@ public class Evento {
 
 	public void setData(LocalDate data) {
 		data = LocalDate.now();
+	
 		this.data = data;
 	}
 
@@ -51,7 +52,7 @@ public class Evento {
 		}
 	}
 		public void disdici(int postiPrenotati)throws Exception{
-			this.postiPrenotati = postiPrenotati - 1;
+			this.postiPrenotati = postiPrenotati;
 			if(postiPrenotati <=0 ) {
 				throw new Exception("siamo spiacenti non ci sono posti prenotati per l evento");
 			}
@@ -61,7 +62,7 @@ public String toString() {
 		return "Titolo evento: " + titolo
 				+ "\nData evento: " + data
 				+ "\nPosti totali per l evento: " + postiTotali
-				+ "\nPosti gia prenotati per l evento: " + postiPrenotati
+				+ "\nPosti selezionati: " + postiPrenotati
 				+ "\nPosti disponibili per l evento: " + (postiTotali - postiPrenotati);
 	}
 	

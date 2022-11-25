@@ -22,25 +22,23 @@ try {
 				int booking = sc.nextInt();
 				e.prenota(booking);
 				System.out.print(e);
-			}
-			System.out.print("\nVuoi disdire una prenotazione?? y/n");
-			String negativeAnswer = sc.nextLine();
-			if(negativeAnswer.equals("y")){
-				System.out.print("\nquanti biglietti vuoi disdire??");
-				int cancelled = sc.nextInt();
-				e.disdici(cancelled);
-				System.out.print(e);
-			}
+				Scanner cancel = new Scanner(System.in);
+				System.out.print("\nVuoi disdire una prenotazione?? y/n");
+				String negative = cancel.nextLine();
+				if(negative.equals("y")){
+					System.out.print("\nquanti biglietti vuoi disdire??");
+					int cancelled = cancel.nextInt();
+					e.disdici(cancelled);
+					System.out.println(e);
+			}}}
 			
-			
-		} catch(Exception e) {
+		catch(Exception e) {
 			
 			System.err.println(e.getMessage());
 		}
 	}
 
 	
-
 	
 
 	
