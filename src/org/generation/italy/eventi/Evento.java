@@ -28,9 +28,11 @@ public class Evento {
 		return data;
 	}
 
-	public void setData(LocalDate data) {
+	public void setData(LocalDate data) throws Exception{
 		data = LocalDate.now();
-	
+		if(data.isBefore(LocalDate.now())) {
+		throw new Exception("la data non puo essere precedente al giorno odierno!");
+		}
 		this.data = data;
 	}
 
@@ -48,12 +50,12 @@ public class Evento {
 	 public void prenota(int postiPrenotati)throws Exception{
 		this.postiPrenotati = postiPrenotati;
 		if(postiTotali <= postiPrenotati ) {
-			throw new Exception("siamo spiacenti non ci sono piu posti disponibili per l evento!");
+			throw new Exception("siamo spiacenti non ci sono abbastanza posti disponibili per l evento!");
 		}
 	}
-		public void disdici(int postiPrenotati)throws Exception{
+		public void disdici(int postiPrenotati , int postiTotali)throws Exception{
 			this.postiPrenotati = postiPrenotati;
-			if(postiPrenotati <=0 ) {
+			if(postiPrenotati <=0 || postiPrenotati> postiTotali ) {
 				throw new Exception("siamo spiacenti non ci sono posti prenotati per l evento");
 			}
 	}
