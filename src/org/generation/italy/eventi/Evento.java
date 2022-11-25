@@ -7,12 +7,13 @@ public class Evento {
 	private String titolo;
 	private LocalDate data;
 	private int postiTotali;
+	
 	private int postiPrenotati;
 	
 	public Evento(String titolo , int postiTotali)throws Exception {
 	setTitolo(titolo);
 	setData(data);
-	this.postiTotali = postiTotali;
+	setPostiTotali(postiTotali);
 	getPostiPrenotati();
 	
 	}
@@ -35,7 +36,9 @@ public class Evento {
 		}
 		this.data = data;
 	}
-
+	public void setPostiTotali(int postiTotali) {
+		this.postiTotali = postiTotali;
+	}
 	public int getPostiTotali() {
 		int disponible = this.postiTotali;
 		return disponible;
@@ -59,13 +62,16 @@ public class Evento {
 				throw new Exception("siamo spiacenti non ci sono posti prenotati per l evento");
 			}
 	}
+		private String dataFormatter() {
+			return data.getDayOfMonth() + "/" + data.getMonthValue() + "/" + data.getYear();
+		}
 public String toString() {
 		
 		return "Titolo evento: " + titolo
-				+ "\nData evento: " + data
-				+ "\nPosti totali per l evento: " + postiTotali
-				+ "\nPosti selezionati: " + postiPrenotati
-				+ "\nPosti disponibili per l evento: " + (postiTotali - postiPrenotati);
+				+ "\nData evento: " + dataFormatter()
+				+ "\nPosti totali per l evento: \n" + postiTotali
+				+ "\nPosti selezionati: \n" + postiPrenotati
+				+ "\nPosti disponibili per l evento: \n" + (postiTotali - postiPrenotati);
 	}
 	
 	

@@ -1,17 +1,17 @@
 package org.generation.italy.eventi;
 
 import java.util.Collection;
-import java.beans.EventSetDescriptor;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class ProgrammEventi {
 
 	private String title;
-	private ArrayList Events;
+	private List<Evento> eventsList;
 	public ProgrammEventi(String title) {
 		setTitle(title);
-		
+		eventsList = new ArrayList<Evento>();
 	}
 	
 	
@@ -22,20 +22,31 @@ public class ProgrammEventi {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	public List<Evento> getEventsList() {
+		return eventsList;
+	}
+
+
+	public void setEventsList(List<Evento> eventsList) {
+		this.eventsList = eventsList;
+	}
 	
-	public ArrayList getEvents() {
-		return Events;
+	public void addEventsList(Evento nuovoEvento) {
+		eventsList.add(nuovoEvento);
 	}
 
-
-	public void setEvents(ArrayList events) {
-		List<String> eventsList = new ArrayList<>();
-		eventsList.add(title);
-		System.out.println(eventsList);
+	public int numberEvents() {
 		
+		
+		return eventsList.size();
 	}
+	public void clearEvents() {
+		eventsList.clear();
+	}
+	
 	@Override public String toString(){
-		return "la lista di eventi:" + Events;
+		return "\n" + getEventsList();
 	}
-
 }
+
+
