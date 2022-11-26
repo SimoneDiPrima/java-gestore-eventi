@@ -10,12 +10,7 @@ public class Evento {
 	private int postiPrenotati;
 	private int postiDisponibili;
 	
-	public int getPostiDisponibili() {
-		return postiDisponibili;
-	}
-	public void setPostiDisponibili(int postiDisponibili) {
-		this.postiDisponibili = postiDisponibili;
-	}
+	
 	public Evento(String titolo , int postiTotali)throws Exception {
 	setTitolo(titolo);
 	setData(data);
