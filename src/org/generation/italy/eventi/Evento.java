@@ -1,6 +1,6 @@
 package org.generation.italy.eventi;
 
-import java.util.Formatter;
+import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 
 
@@ -65,10 +65,10 @@ public class Evento {
 				throw new Exception("siamo spiacenti non ci sono posti prenotati per l evento");
 			}
 	}
-		private String dataFormatter() {
+		protected String dataFormatter() {
 			return data.getDayOfMonth() + "/" + data.getMonthValue() + "/" + data.getYear();
 		}
-public String toString() {
+		@Override public String toString() {
 		
 		return "Titolo evento: " + titolo
 				+ "\nData evento: " + dataFormatter()
@@ -76,6 +76,6 @@ public String toString() {
 				+ "\nPosti selezionati: \n" + postiPrenotati
 				+ "\nPosti disponibili per l evento: \n" + (postiTotali - postiPrenotati);
 	}
-	
+		
 	
 }

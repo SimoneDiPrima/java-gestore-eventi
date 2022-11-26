@@ -2,6 +2,7 @@ package org.generation.italy.eventi;
 
 
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Scanner;
@@ -15,7 +16,8 @@ public class Main {
 	public static void main(String[] args)throws Exception {
 		Scanner sc = new Scanner(System.in);
 try {
-			
+	Concerto vasco = new Concerto("\nthe tribute band",LocalDate.now(),400,LocalTime.of(21, 15, 0),BigDecimal.valueOf(66.67));
+	System.out.println(vasco);
 			Evento c = new Evento("Welcome to the jungle",LocalDate.now(), 1000);
 			System.out.print(c);
 			
@@ -70,6 +72,7 @@ try {
 					else {
 						System.out.print("Perfetto non vediamo l ora che vieni a trovarci!");}
 				}
+			
 			else {
 				System.out.print("Grazie lo stesso per essere passato di qua!");}}
 		catch(Exception e) {
