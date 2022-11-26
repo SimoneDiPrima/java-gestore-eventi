@@ -1,6 +1,7 @@
 package org.generation.italy.eventi;
 
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.time.LocalDate;
 
 
@@ -67,6 +68,13 @@ public class Evento {
 	}
 		protected String dataFormatter() {
 			return data.getDayOfMonth() + "/" + data.getMonthValue() + "/" + data.getYear();
+		}
+		public static class EventsComparator implements Comparator<Object>{
+			@Override public int compare(Object o1,Object o2){
+				if(o1.equals(o2))
+				return 1;
+				else return -1;
+			}
 		}
 		@Override public String toString() {
 		
