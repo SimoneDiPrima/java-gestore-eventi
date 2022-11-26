@@ -13,7 +13,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 try {
 			
-			Evento c = new Evento("Welcome to the jungle", 1000);
+			Evento c = new Evento("Welcome to the jungle",LocalDate.now(), 1000);
 			System.out.print(c);
 			
 			System.out.print("\nVuoi prenotare un biglietto?? y/n");
@@ -37,11 +37,11 @@ try {
 					String newProg = program.nextLine();
 					if(newProg.equals("y")) {
 					ProgrammEventi Sanremo = new ProgrammEventi("Sanremo");
-					Evento a = new Evento("Il leone dorme",200);
-					Evento b = new Evento("Welcome to the jungle",200);
-					Evento d = new Evento("Bambi",200);
-					Evento e = new Evento("The Goodfellas",200);
-					Evento f = new Evento("Scarface",200);
+					Evento a = new Evento("Il leone dorme",LocalDate.now(),200);
+					Evento b = new Evento("Welcome to the jungle",LocalDate.now(),200);
+					Evento d = new Evento("Bambi",LocalDate.now(),200);
+					Evento e = new Evento("The Goodfellas",LocalDate.now(),200);
+					Evento f = new Evento("Scarface",LocalDate.now(),200);
 					Sanremo.addEventsList(a);
 					Sanremo.addEventsList(b);
 					Sanremo.addEventsList(c);
