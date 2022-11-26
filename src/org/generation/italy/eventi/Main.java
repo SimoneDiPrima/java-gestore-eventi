@@ -1,9 +1,12 @@
 package org.generation.italy.eventi;
 
 
-import java.io.IOException;
+
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Scanner;
+import java.util.List;
+
 
 
 
@@ -69,11 +72,6 @@ try {
 				}
 			else {
 				System.out.print("Grazie lo stesso per essere passato di qua!");}}
-				
-			
-			
-
-		
 		catch(Exception e) {
 			
 			System.err.println(e.getMessage());

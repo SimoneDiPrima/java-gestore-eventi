@@ -1,5 +1,6 @@
 package org.generation.italy.eventi;
 
+import java.util.Formatter;
 import java.time.LocalDate;
 
 
@@ -8,7 +9,7 @@ public class Evento {
 	private LocalDate data;
 	private int postiTotali;
 	private int postiPrenotati;
-	private int postiDisponibili;
+
 	
 	
 	public Evento(String titolo ,LocalDate data, int postiTotali)throws Exception {
