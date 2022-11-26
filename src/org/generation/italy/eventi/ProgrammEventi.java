@@ -41,6 +41,7 @@ public class ProgrammEventi {
 		return eventsList.size();
 	}
 	public void clearEvents() {
+		
 		eventsList.clear();
 	}
 	

@@ -7,9 +7,15 @@ public class Evento {
 	private String titolo;
 	private LocalDate data;
 	private int postiTotali;
-	
 	private int postiPrenotati;
+	private int postiDisponibili;
 	
+	public int getPostiDisponibili() {
+		return postiDisponibili;
+	}
+	public void setPostiDisponibili(int postiDisponibili) {
+		this.postiDisponibili = postiDisponibili;
+	}
 	public Evento(String titolo , int postiTotali)throws Exception {
 	setTitolo(titolo);
 	setData(data);
@@ -49,14 +55,16 @@ public class Evento {
 		return this.postiPrenotati;
 	}
 	
-	 public void prenota(int postiPrenotati)throws Exception{
+	
+	 public void prenota(int postiPrenotati , int postiTotali)throws Exception{
 		this.postiPrenotati = postiPrenotati;
 		if(postiTotali <= postiPrenotati ) {
 			throw new Exception("siamo spiacenti non ci sono abbastanza posti disponibili per l evento!");
 		}
+		
+		
 	}
-		public void disdici(int postiPrenotati )throws Exception{
-			this.postiPrenotati = postiPrenotati;
+		public void disdici(int postiPrenotati ,int posti)throws Exception{
 			if(postiPrenotati <=0 || postiPrenotati> postiTotali ) {
 				throw new Exception("siamo spiacenti non ci sono posti prenotati per l evento");
 			}
